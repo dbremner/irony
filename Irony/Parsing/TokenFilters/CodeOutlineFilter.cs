@@ -17,11 +17,12 @@ namespace Irony.Parsing {
     public readonly OutlineOptions Options;
     public readonly KeyTerm ContinuationTerminal; //Terminal
 
-    GrammarData _grammarData; 
-    Grammar _grammar;
+    readonly GrammarData _grammarData;
+    readonly Grammar _grammar;
     ParsingContext _context;
-    bool _produceIndents;
-    bool _checkBraces, _checkOperator;
+    readonly bool _produceIndents;
+    readonly bool _checkBraces;
+    readonly bool _checkOperator;
 
     public Stack<int> Indents = new Stack<int>();
     public Token CurrentToken;

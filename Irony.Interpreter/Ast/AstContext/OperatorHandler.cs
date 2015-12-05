@@ -30,7 +30,7 @@ namespace Irony.Interpreter.Ast {
 
 
   public class OperatorHandler {
-    private OperatorInfoDictionary _registeredOperators;
+    private readonly OperatorInfoDictionary _registeredOperators;
 
 
     public OperatorHandler(bool languageCaseSensitive) {

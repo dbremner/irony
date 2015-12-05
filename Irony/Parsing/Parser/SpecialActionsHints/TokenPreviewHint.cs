@@ -22,11 +22,11 @@ namespace Irony.Parsing {
  
   public class TokenPreviewHint : GrammarHint {
     public int MaxPreviewTokens = 1000;
-    private PreferredActionType _actionType; 
-    private string _firstString;
-    private StringSet _beforeStrings = new StringSet();
+    private readonly PreferredActionType _actionType; 
+    private readonly string _firstString;
+    private readonly StringSet _beforeStrings = new StringSet();
     private Terminal _firstTerminal;
-    private TerminalSet _beforeTerminals = new TerminalSet();
+    private readonly TerminalSet _beforeTerminals = new TerminalSet();
     private string _description; 
     
     public TokenPreviewHint(PreferredActionType actionType, string thisSymbol, params string[] comesBefore) {

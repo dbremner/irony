@@ -14,7 +14,7 @@ namespace Refal
 	public static class ScriptThreadExtensions
 	{
 		/// Unique names for implicit local variables
-		static string LastPatternSymbolName = Guid.NewGuid().ToString();
+		static readonly string LastPatternSymbolName = Guid.NewGuid().ToString();
 
 		/// <summary>
 		/// Retrieve last evaluated pattern.

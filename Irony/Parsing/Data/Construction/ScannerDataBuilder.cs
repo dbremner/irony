@@ -17,9 +17,9 @@ using System.Text;
 
 namespace Irony.Parsing.Construction { 
   internal class ScannerDataBuilder {
-    LanguageData _language;
-    Grammar _grammar;
-    GrammarData _grammarData; 
+    readonly LanguageData _language;
+    readonly Grammar _grammar;
+    readonly GrammarData _grammarData; 
     ScannerData _data; 
 
     internal ScannerDataBuilder(LanguageData language) {

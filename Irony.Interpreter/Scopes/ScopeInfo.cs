@@ -32,7 +32,7 @@ namespace Irony.Interpreter {
     public readonly string AsString;
     public Scope ScopeInstance; //Experiment: reusable scope instance; see ScriptThread.cs class
 
-    private SlotInfoDictionary _slots;
+    private readonly SlotInfoDictionary _slots;
     internal protected object LockObject = new object(); 
 
     public ScopeInfo(AstNode ownerNode, bool caseSensitive) {

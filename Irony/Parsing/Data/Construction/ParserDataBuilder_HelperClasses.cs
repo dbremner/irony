@@ -122,7 +122,7 @@ namespace Irony.Parsing.Construction {
     public readonly LRItemSet Items;
     public readonly TransitionSet Includes = new TransitionSet();
     public readonly TransitionSet IncludedBy = new TransitionSet();
-    int _hashCode;
+    readonly int _hashCode;
 
     public Transition(ParserState fromState, NonTerminal overNonTerminal) {
       FromState = fromState;
@@ -172,8 +172,8 @@ namespace Irony.Parsing.Construction {
     public readonly LR0Item Core;
     //these properties are used in lookahead computations
     public LRItem ShiftedItem;
-    public Transition Transition; 
-    int _hashCode;
+    public Transition Transition;
+    readonly int _hashCode;
 
     //Lookahead info for reduce items
     public TransitionSet Lookbacks = new TransitionSet(); 
@@ -277,7 +277,7 @@ namespace Irony.Parsing.Construction {
     }
     public override int GetHashCode() {
       return _hashCode;
-    } int _hashCode;
+    } readonly int _hashCode;
 
   }//LR0Item
 

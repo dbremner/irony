@@ -24,7 +24,7 @@ namespace Irony.Parsing {
     #region Properties and Fields: Data, _source
     public readonly ScannerData Data;
     public readonly Parser Parser;
-    Grammar _grammar;
+    readonly Grammar _grammar;
     //buffered tokens can come from expanding a multi-token, when Terminal.TryMatch() returns several tokens packed into one token
 
     private ParsingContext Context {

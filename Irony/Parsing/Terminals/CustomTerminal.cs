@@ -31,7 +31,7 @@ namespace Irony.Parsing {
     public MatchHandler Handler   {
       [System.Diagnostics.DebuggerStepThrough]
       get {return _handler;}
-    } MatchHandler  _handler;
+    } readonly MatchHandler  _handler;
 
     public override Token TryMatch(ParsingContext context, ISourceStream source) {
       return _handler(this, context, source);

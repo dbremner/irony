@@ -18,8 +18,8 @@ using System.Text;
 namespace Irony.Parsing {
 
   public class PrecedenceBasedParserAction : ConditionalParserAction {
-    ShiftParserAction _shiftAction;
-    ReduceParserAction _reduceAction; 
+    readonly ShiftParserAction _shiftAction;
+    readonly ReduceParserAction _reduceAction; 
 
     public PrecedenceBasedParserAction(BnfTerm shiftTerm, ParserState newShiftState, Production reduceProduction)  {
       _reduceAction = new ReduceParserAction(reduceProduction);

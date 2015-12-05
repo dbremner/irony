@@ -96,7 +96,7 @@ namespace Irony.Parsing {
 
     //Hash code - we use static counter to generate hash codes
     private static int _hashCounter;
-    private int _hashCode;
+    private readonly int _hashCode;
     public override int GetHashCode() {
       return _hashCode; 
     }

@@ -18,7 +18,7 @@ namespace Irony.Tests {
   public static class TestHelper {
     //A skeleton for a grammar with a single terminal, followed by optional terminator
     class TerminalTestGrammar : Grammar {
-      public string Terminator;
+      public readonly string Terminator;
       public TerminalTestGrammar(Terminal terminal, string terminator = null) : base(caseSensitive: true) {
         Terminator = terminator; 
         var rule = new BnfExpression(terminal);

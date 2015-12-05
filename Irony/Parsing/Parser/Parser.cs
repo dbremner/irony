@@ -22,7 +22,7 @@ namespace Irony.Parsing {
   public class Parser {
     public readonly LanguageData Language;
     public readonly ParserData Data;
-    private Grammar _grammar; 
+    private readonly Grammar _grammar; 
     //public readonly CoreParser CoreParser;
     public readonly Scanner Scanner;
     public ParsingContext Context { get; internal set; }

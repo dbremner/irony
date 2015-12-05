@@ -20,7 +20,7 @@ namespace Irony.Parsing.Construction {
   internal class LanguageDataBuilder { 
 
     internal LanguageData Language;
-    Grammar _grammar;
+    readonly Grammar _grammar;
 
     public LanguageDataBuilder(LanguageData language) {
       Language = language;

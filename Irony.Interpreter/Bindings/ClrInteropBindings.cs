@@ -42,7 +42,7 @@ namespace Irony.Interpreter {
   }//class
 
   public class ClrNamespaceBindingTargetInfo : ClrInteropBindingTargetInfo {
-    ConstantBinding _binding; 
+    readonly ConstantBinding _binding; 
     public ClrNamespaceBindingTargetInfo(string ns) : base(ns, ClrTargetType.Namespace) {
       _binding = new ConstantBinding(ns, this); 
     }
@@ -52,7 +52,7 @@ namespace Irony.Interpreter {
   }
 
   public class ClrTypeBindingTargetInfo : ClrInteropBindingTargetInfo {
-    ConstantBinding _binding;
+    readonly ConstantBinding _binding;
     public ClrTypeBindingTargetInfo(Type type) : base(type.Name, ClrTargetType.Type) {
       _binding = new ConstantBinding(type, this);
     }
@@ -64,8 +64,8 @@ namespace Irony.Interpreter {
   public class ClrMethodBindingTargetInfo : ClrInteropBindingTargetInfo, ICallTarget { //The object works as ICallTarget itself
     public object Instance;
     public Type DeclaringType;
-    BindingFlags _invokeFlags;
-    Binding _binding;
+    readonly BindingFlags _invokeFlags;
+    readonly Binding _binding;
 
     public ClrMethodBindingTargetInfo(Type declaringType, string methodName, object instance = null) : base(methodName,  ClrTargetType.Method) {
       DeclaringType = declaringType;
@@ -97,7 +97,7 @@ namespace Irony.Interpreter {
   public class ClrPropertyBindingTargetInfo : ClrInteropBindingTargetInfo {
     public object Instance;
     public PropertyInfo Property;
-    Binding _binding;
+    readonly Binding _binding;
 
     public ClrPropertyBindingTargetInfo(PropertyInfo property, object instance) : base(property.Name, ClrTargetType.Property) {
       Property = property;
@@ -121,7 +121,7 @@ namespace Irony.Interpreter {
   public class ClrFieldBindingTargetInfo : ClrInteropBindingTargetInfo {
     public object Instance;
     public FieldInfo Field;
-    Binding _binding;
+    readonly Binding _binding;
 
     public ClrFieldBindingTargetInfo(FieldInfo field, object instance)  : base(field.Name, ClrTargetType.Field) {
       Field = field;

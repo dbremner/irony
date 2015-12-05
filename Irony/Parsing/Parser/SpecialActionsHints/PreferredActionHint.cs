@@ -19,7 +19,7 @@ using Irony.Parsing.Construction;
 namespace Irony.Parsing {
 
   public class PreferredActionHint : GrammarHint {
-    PreferredActionType ActionType;
+    readonly PreferredActionType ActionType;
     public PreferredActionHint(PreferredActionType actionType) {
       ActionType = actionType;
     }

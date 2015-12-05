@@ -16,8 +16,8 @@ namespace Irony.Samples {
     internal class WikiTermStack : Stack<WikiTerminalBase> { }
 
     StringBuilder _output;
-    FlagTable _flags = new FlagTable();  
-    WikiTermStack _openLists = new WikiTermStack(); 
+    readonly FlagTable _flags = new FlagTable();
+    readonly WikiTermStack _openLists = new WikiTermStack(); 
     bool _atLineStart = true; 
     WikiTerminalBase _currentHeader = null; 
     //Table flags

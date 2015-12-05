@@ -18,8 +18,8 @@ using System.Text;
 namespace Irony.Parsing.Construction { 
 
   internal class GrammarDataBuilder {
-    LanguageData _language;
-    Grammar _grammar;
+    readonly LanguageData _language;
+    readonly Grammar _grammar;
     GrammarData _grammarData;
     int _unnamedCount; //internal counter for generating names for unnamed non-terminals
     internal int _lastItemId; //each LR0Item gets its unique ID, last assigned (max) Id is kept in this field

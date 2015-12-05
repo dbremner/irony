@@ -17,10 +17,10 @@ using System.Text;
 namespace Irony.Parsing {
 
   public class SourceStream : ISourceStream {
-    StringComparison _stringComparison;
-    int _tabWidth;
-    char[] _chars;
-    int _textLength;
+    readonly StringComparison _stringComparison;
+    readonly int _tabWidth;
+    readonly char[] _chars;
+    readonly int _textLength;
 
     public SourceStream(string text, bool caseSensitive, int tabWidth) : this(text, caseSensitive, tabWidth, new SourceLocation()) {
     }
@@ -40,7 +40,7 @@ namespace Irony.Parsing {
     #region ISourceStream Members
     public string Text {
       get { return _text; } 
-    } string _text;
+    } readonly string _text;
 
     public int Position {
       get { return _location.Position; }

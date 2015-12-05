@@ -44,7 +44,7 @@ namespace Irony.Interpreter {
     private IList<Assembly> ImportedAssemblies = new List<Assembly>();
 
     public StringBuilder OutputBuffer = new StringBuilder();
-    private object _lockObject = new object();
+    private readonly object _lockObject = new object();
 
     // Current mode/status variables
     public AppStatus Status;

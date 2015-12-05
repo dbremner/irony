@@ -45,9 +45,9 @@ namespace Irony.Interpreter.Ast {
       Expression
     }
     class TemplateSegment {
-      public SegmentType Type;
-      public string Text;
-      public AstNode ExpressionNode;
+      public readonly SegmentType Type;
+      public readonly string Text;
+      public readonly AstNode ExpressionNode;
       public int Position; //Position in raw text of the token for error reporting
       public TemplateSegment(string text, AstNode node, int position) {
         Type = node == null? SegmentType.Text : SegmentType.Expression; 
@@ -62,7 +62,7 @@ namespace Irony.Interpreter.Ast {
     string _template; 
     string _tokenText; //used for locating error 
     StringTemplateSettings _templateSettings; //copied from Terminal.AstNodeConfig 
-    SegmentList _segments = new SegmentList();
+    readonly SegmentList _segments = new SegmentList();
 
     public override void Init(AstContext context, ParseTreeNode treeNode) {
       base.Init(context, treeNode);

@@ -20,7 +20,7 @@ namespace Irony.Interpreter {
   /// A wrapper around Scope exposing it as a string-object dictionary. Used to expose Globals dictionary from Main scope
   /// </summary>
   public class ScopeValuesDictionary : IDictionary<string, object> {
-    ScopeBase _scope; 
+    readonly ScopeBase _scope; 
 
     internal ScopeValuesDictionary(ScopeBase scope) {
       _scope = scope;

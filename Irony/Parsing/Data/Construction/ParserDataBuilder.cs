@@ -23,10 +23,10 @@ namespace Irony.Parsing.Construction {
   // See _about_parser_construction.txt file in this folder for important comments
 
   internal partial class ParserDataBuilder {
-    LanguageData _language;
+    readonly LanguageData _language;
     ParserData _data;
-    Grammar _grammar;
-    ParserStateHash _stateHash = new ParserStateHash();
+    readonly Grammar _grammar;
+    readonly ParserStateHash _stateHash = new ParserStateHash();
 
     internal ParserDataBuilder(LanguageData language) {
       _language = language;

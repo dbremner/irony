@@ -92,7 +92,7 @@ namespace Irony.Parsing {
     //Default types are assigned to literals without suffixes; first matching type used
     public TypeCode[] DefaultIntTypes = new TypeCode[] { TypeCode.Int32 };
     public TypeCode DefaultFloatType = TypeCode.Double;
-    private ExponentsTable _exponentsTable = new ExponentsTable(); 
+    private readonly ExponentsTable _exponentsTable = new ExponentsTable(); 
 
     public bool IsSet(NumberOptions option) {
       return (Options & option) != 0;

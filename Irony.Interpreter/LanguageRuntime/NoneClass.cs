@@ -20,7 +20,7 @@ namespace Irony.Interpreter {
   
   // A class for special reserved None value used in many scripting languages. 
   public class NoneClass {
-    string _toString;
+    readonly string _toString;
       
     private NoneClass() {
       _toString = Resources.LabelNone;

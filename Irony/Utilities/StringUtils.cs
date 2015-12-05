@@ -39,7 +39,7 @@ namespace Irony {
   // CharHashSet: adding Hash to the name to avoid confusion with System.Runtime.Interoperability.CharSet
   // Adding case sensitivity
   public class CharHashSet : HashSet<char> {
-    bool _caseSensitive;
+    readonly bool _caseSensitive;
     public CharHashSet(bool caseSensitive = true) {
       _caseSensitive = caseSensitive; 
     }

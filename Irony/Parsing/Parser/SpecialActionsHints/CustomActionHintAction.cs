@@ -22,8 +22,8 @@ namespace Irony.Parsing {
   public delegate void ExecuteActionMethod(ParsingContext context, CustomParserAction action);
 
   public class CustomActionHint: GrammarHint {
-    private ExecuteActionMethod _executeMethod;
-    private PreviewActionMethod _previewMethod;
+    private readonly ExecuteActionMethod _executeMethod;
+    private readonly PreviewActionMethod _previewMethod;
 
     public CustomActionHint(ExecuteActionMethod executeMethod, PreviewActionMethod previewMethod = null) {
       _executeMethod = executeMethod;

@@ -22,14 +22,14 @@ using Irony.Parsing;
 namespace Irony.GrammarExplorer {
 
   public class EditorAdapter {
-    Parser _parser;
+    readonly Parser _parser;
     Scanner _scanner;
     ParseTree _parseTree;
     string _newText;
-    EditorViewAdapterList _views = new EditorViewAdapterList();
+    readonly EditorViewAdapterList _views = new EditorViewAdapterList();
     EditorViewAdapterList _viewsCopy; //copy used in refresh loop; set to null when views are added/removed
-    Thread _parserThread;
-    Thread _colorizerThread;
+    readonly Thread _parserThread;
+    readonly Thread _colorizerThread;
     bool _stopped;
 
     public EditorAdapter(LanguageData language) {

@@ -24,7 +24,7 @@ namespace Irony.Samples.CSharp {
 
   [Language("c#", "3.5", "Sample c# grammar")]
   public class CSharpGrammar : Grammar {
-    TerminalSet _skipTokensInPreview = new TerminalSet(); //used in token preview for conflict resolution
+    readonly TerminalSet _skipTokensInPreview = new TerminalSet(); //used in token preview for conflict resolution
     public CSharpGrammar() {
       this.GrammarComments = "NOTE: This grammar is just a demo, and it is a broken demo.\r\n" + 
                              "Demonstrates token preview technique to help parser resolve conflicts.\r\n";

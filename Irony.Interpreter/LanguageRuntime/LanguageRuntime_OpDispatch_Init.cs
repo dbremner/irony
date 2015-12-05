@@ -23,12 +23,12 @@ namespace Irony.Interpreter {
 
   //Initialization of Runtime
   public partial class LanguageRuntime {
-    private static ExpressionType[] _overflowOperators = new ExpressionType[] { 
+    private static readonly ExpressionType[] _overflowOperators = new ExpressionType[] { 
        ExpressionType.Add, ExpressionType.AddChecked, ExpressionType.Subtract, ExpressionType.SubtractChecked, 
        ExpressionType.Multiply, ExpressionType.MultiplyChecked, ExpressionType.Power};
     
     // Smart boxing: boxes for a bunch of integers are preallocated
-    private object[] _boxes = new object[4096];
+    private readonly object[] _boxes = new object[4096];
     private const int _boxesMiddle = 2048;
     // Note: ran some primitive tests, and it appears that use of smart boxing makes it slower 
     //  by about 5-10%; so disabling it for now
@@ -644,12 +644,12 @@ namespace Irony.Interpreter {
     }
 
     //Note bool type at the end - if any of operands is of bool type, convert the other to bool as well
-    static TypeList _typesSequence = new TypeList(
+    static readonly TypeList _typesSequence = new TypeList(
         typeof(sbyte), typeof(Int16), typeof(Int32), typeof(Int64), typeof(BigInteger), // typeof(Rational)
         typeof(Single), typeof(Double), typeof(Complex),
         typeof(bool), typeof(char), typeof(string)
     );
-    static TypeList _unsignedTypes = new TypeList(
+    static readonly TypeList _unsignedTypes = new TypeList(
       typeof(byte), typeof(UInt16), typeof(UInt32), typeof(UInt64)
     );
     #endregion

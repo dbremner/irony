@@ -41,7 +41,7 @@ namespace Irony.GrammarExplorer {
     Parser _parser;
     ParseTree _parseTree;
     ScriptException _runtimeError;
-    GrammarLoader _grammarLoader = new GrammarLoader();
+    readonly GrammarLoader _grammarLoader = new GrammarLoader();
     bool _loaded;
     bool _treeClickDisabled; //to temporarily disable tree click when we locate the node programmatically
 

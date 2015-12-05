@@ -30,15 +30,15 @@ namespace Irony.Parsing {
     
     public string LanguageName {
       get { return _languageName; }
-    } string _languageName;
+    } readonly string _languageName;
 
     public string Version {
       get { return _version; }
-    } string _version;
+    } readonly string _version;
 
     public string Description {
       get { return _description; }
-    } string _description; 
+    } readonly string _description; 
 
     public static LanguageAttribute GetValue(Type grammarClass) {
       object[] attrs = grammarClass.GetCustomAttributes(typeof(LanguageAttribute), true);

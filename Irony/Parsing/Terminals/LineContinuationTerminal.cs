@@ -17,7 +17,7 @@ namespace Irony.Parsing {
 
     public StringList StartSymbols;
     private string _startSymbolsFirsts = String.Concat(_defaultStartSymbols);
-    static string[] _defaultStartSymbols = new[] { "\\", "_" };
+    static readonly string[] _defaultStartSymbols = new[] { "\\", "_" };
     public string LineTerminators = "\n\r\v";
 
     #region overrides

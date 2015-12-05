@@ -43,7 +43,7 @@ namespace Irony.Parsing {
     }
     public static SourceLocation Empty {
       get { return _empty; }
-    } static SourceLocation _empty = new SourceLocation();  
+    } static readonly SourceLocation _empty = new SourceLocation();  
 
     public static SourceLocation operator + (SourceLocation x, SourceLocation y) {
       return new SourceLocation(x.Position + y.Position, x.Line + y.Line, x.Column + y.Column); 

@@ -26,11 +26,11 @@ namespace Irony.GrammarExplorer {
   /// Maintains grammar assemblies, reloads updated files automatically.
   /// </summary>
   class GrammarLoader {
-    private TimeSpan _autoRefreshDelay = TimeSpan.FromMilliseconds(1000);
-    private static HashSet<string> _probingPaths = new HashSet<string>();
-    private Dictionary<string, CachedAssembly> _cachedGrammarAssemblies = new Dictionary<string, CachedAssembly>();
-    private static Dictionary<string, Assembly> _loadedAssembliesByNames = new Dictionary<string, Assembly>();
-    private static HashSet<Assembly> _loadedAssemblies = new HashSet<Assembly>();
+    private readonly TimeSpan _autoRefreshDelay = TimeSpan.FromMilliseconds(1000);
+    private static readonly HashSet<string> _probingPaths = new HashSet<string>();
+    private readonly Dictionary<string, CachedAssembly> _cachedGrammarAssemblies = new Dictionary<string, CachedAssembly>();
+    private static readonly Dictionary<string, Assembly> _loadedAssembliesByNames = new Dictionary<string, Assembly>();
+    private static readonly HashSet<Assembly> _loadedAssemblies = new HashSet<Assembly>();
     private static bool _enableBrowsingForAssemblyResolution = false;
 
     static GrammarLoader() {
