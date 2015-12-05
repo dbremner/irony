@@ -98,7 +98,7 @@ http://www.wikicreole.org/";
       return html; 
     }
 
-    private void PreprocessTokens(TokenList tokens) {
+    private static void PreprocessTokens(TokenList tokens) {
       var result = new TokenList(); 
       Token prevToken = null;  
       bool prevIsParaBreak = true; 

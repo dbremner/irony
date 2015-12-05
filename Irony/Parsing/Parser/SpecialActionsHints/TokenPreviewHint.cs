@@ -125,7 +125,7 @@ namespace Irony.Parsing {
     //Check if there is an action already in state for this term; if yes, and it is Conditional action, 
     // then simply add an extra conditional entry to it. If an action does not exist, or it is not conditional, 
     // create new conditional action for this term.
-    private void AddConditionalEntry(ParserState state, BnfTerm term, ConditionalEntry entry) {
+    private static void AddConditionalEntry(ParserState state, BnfTerm term, ConditionalEntry entry) {
       ParserAction oldAction;
       ConditionalParserAction condAction = null; 
       if (state.Actions.TryGetValue(term, out oldAction))
@@ -145,7 +145,7 @@ namespace Irony.Parsing {
     //Find an LR item without hints compatible with term (either shift on term or reduce with term as lookahead); 
     // this item without hints would become our default. We assume that other items have hints, and when conditions
     // on all these hints fail, we chose this remaining item without hints.
-    private ParserAction FindDefaultAction(ParserState state, BnfTerm term) {
+    private static ParserAction FindDefaultAction(ParserState state, BnfTerm term) {
       //First check reduce items
       var reduceItems = state.BuilderData.ReduceItems.SelectByLookahead(term as Terminal);
       foreach (var item in reduceItems)

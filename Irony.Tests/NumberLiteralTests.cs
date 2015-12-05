@@ -392,7 +392,7 @@ namespace Irony.Tests {
       Assert.IsTrue((int)token.Value == int.MaxValue, "Failed to read int.MaxValue");
     }//method
 
-    private void CheckType(Token token, Type type) {
+    private static void CheckType(Token token, Type type) {
       Assert.IsNotNull(token, "TryMatch returned null, while token was expected.");
       Type vtype = token.Value.GetType();
       Assert.IsTrue(vtype == type, "Invalid target type, expected " + type.ToString() + ", found:  " + vtype);

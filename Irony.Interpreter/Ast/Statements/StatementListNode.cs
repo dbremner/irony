@@ -60,7 +60,7 @@ namespace Irony.Interpreter.Ast {
       return result;
     }
 
-    private object EvaluateEmpty(ScriptThread thread) {
+    private static object EvaluateEmpty(ScriptThread thread) {
       return null; 
     }
 

@@ -212,7 +212,7 @@ namespace Irony.GrammarExplorer {
       if (position < tokens[0].Location.Position || position > lastTokenEnd) return -1;
       return LocateTokenExt(tokens, position, 0, tokens.Count - 1);
     }
-    private int LocateTokenExt(TokenList tokens, int position, int fromIndex, int untilIndex) {
+    private static int LocateTokenExt(TokenList tokens, int position, int fromIndex, int untilIndex) {
       if (fromIndex + 1 >= untilIndex) return fromIndex;
       int midIndex = (fromIndex + untilIndex) / 2;
       Token middleToken = tokens[midIndex];

@@ -67,7 +67,7 @@ namespace Irony.Samples.FullTextSearch
 
         //Creates extended identifier terminal that allows international characters
         // Following the pattern used for c# identifier terminal in TerminalFactory.CreateCSharpIdentifier method;
-        private IdentifierTerminal CreateTerm(string name) {
+        private static IdentifierTerminal CreateTerm(string name) {
           IdentifierTerminal term = new IdentifierTerminal(name,   "!@#$%^*_'.?-", "!@#$%^*_'.?0123456789");
           term.CharCategories.AddRange(new UnicodeCategory[] {
              UnicodeCategory.UppercaseLetter, //Ul

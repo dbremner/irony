@@ -56,7 +56,7 @@ namespace Irony.Parsing.Construction {
     }
 
     #region Language Data Validation
-    private void Validate() {
+    private static void Validate() {
 
     }//method
     #endregion

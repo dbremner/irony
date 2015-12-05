@@ -112,7 +112,7 @@ namespace Irony.Parsing.Construction {
 
     }
 
-    private void AddTerminalToLookupByFirstChar(TerminalLookupTable _lookup, Terminal term, char firstChar) {
+    private static void AddTerminalToLookupByFirstChar(TerminalLookupTable _lookup, Terminal term, char firstChar) {
       TerminalList currentList;
       if (!_lookup.TryGetValue(firstChar, out currentList)) {
         //if list does not exist yet, create it

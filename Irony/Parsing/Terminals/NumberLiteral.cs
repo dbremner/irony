@@ -311,7 +311,7 @@ namespace Irony.Parsing {
     #endregion
 
     #region private utilities
-    private bool QuickConvertToInt32(CompoundTokenDetails details) {
+    private static bool QuickConvertToInt32(CompoundTokenDetails details) {
       int radix = GetRadix(details);
       if (radix == 10 && details.Body.Length > 10) return false;    //10 digits is maximum for int32; int32.MaxValue = 2 147 483 647
       try {
@@ -378,7 +378,7 @@ namespace Irony.Parsing {
       }//switch
       return false; 
     }
-    private bool TryCastToIntegerType(TypeCode typeCode, CompoundTokenDetails details) {
+    private static bool TryCastToIntegerType(TypeCode typeCode, CompoundTokenDetails details) {
       if (details.Value == null) return false;
       try {
         if (typeCode != TypeCode.UInt64)
@@ -390,7 +390,7 @@ namespace Irony.Parsing {
       }
     }//method
 
-    private bool TryConvertToLong(CompoundTokenDetails details, bool useULong) {
+    private static bool TryConvertToLong(CompoundTokenDetails details, bool useULong) {
       try {
         int radix = GetRadix(details);
         //workaround for .Net FX bug: http://connect.microsoft.com/VisualStudio/feedback/ViewFeedback.aspx?FeedbackID=278448
@@ -411,7 +411,7 @@ namespace Irony.Parsing {
       }
     }
 
-    private bool ConvertToBigInteger(CompoundTokenDetails details) {
+    private static bool ConvertToBigInteger(CompoundTokenDetails details) {
       //ignore leading zeros and sign
       details.Body = details.Body.TrimStart('+').TrimStart('-').TrimStart('0');
       if (string.IsNullOrEmpty(details.Body))
@@ -452,7 +452,7 @@ namespace Irony.Parsing {
       return true;
     }
 
-    private int GetRadix(CompoundTokenDetails details) {
+    private static int GetRadix(CompoundTokenDetails details) {
       if (details.IsSet((short)NumberOptions.Hex))
         return 16;
       if (details.IsSet((short)NumberOptions.Octal))
@@ -461,7 +461,7 @@ namespace Irony.Parsing {
         return 2;
       return 10;
     }
-    private string GetDigits(CompoundTokenDetails details) {
+    private static string GetDigits(CompoundTokenDetails details) {
       if (details.IsSet((short)NumberOptions.Hex))
         return Strings.HexDigits;
       if (details.IsSet((short)NumberOptions.Octal))
@@ -470,7 +470,7 @@ namespace Irony.Parsing {
         return Strings.BinaryDigits;
       return Strings.DecimalDigits;
     }
-    private int GetSafeWordLength(CompoundTokenDetails details) {
+    private static int GetSafeWordLength(CompoundTokenDetails details) {
       if (details.IsSet((short)NumberOptions.Hex))
         return 15;
       if (details.IsSet((short)NumberOptions.Octal))
@@ -479,14 +479,14 @@ namespace Irony.Parsing {
         return 63;
       return 19; //maxWordLength 20
     }
-    private int GetSectionCount(int stringLength, int safeWordLength) {
+    private static int GetSectionCount(int stringLength, int safeWordLength) {
       int quotient = stringLength / safeWordLength;
       int remainder = stringLength - quotient * safeWordLength;
       return remainder == 0 ? quotient : quotient + 1;
     }
 
     //radix^safeWordLength
-    private ulong GetSafeWordRadix(CompoundTokenDetails details) {
+    private static ulong GetSafeWordRadix(CompoundTokenDetails details) {
       if (details.IsSet((short)NumberOptions.Hex))
         return 1152921504606846976;
       if (details.IsSet((short)NumberOptions.Octal))

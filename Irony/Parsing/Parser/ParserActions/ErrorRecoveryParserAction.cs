@@ -70,7 +70,7 @@ namespace Irony.Parsing {
       }
     }//method
 
-    private ParserAction FindErrorShiftActionInStack(ParsingContext context) {
+    private static ParserAction FindErrorShiftActionInStack(ParsingContext context) {
       var grammar = context.Language.Grammar; 
       while (context.ParserStack.Count >= 1) {
         ParserAction errorShiftAction;

@@ -237,7 +237,7 @@ namespace Refal.Runtime
 		}
 
 		// extract arguments specified as <Function t.1 e.2>
-		void GetArguments(PassiveExpression expression, out object arg1, out object arg2)
+	    static void GetArguments(PassiveExpression expression, out object arg1, out object arg2)
 		{
 			var p = new Pattern(new TermVariable("t.1"), new ExpressionVariable("e.2"));
 			if (p.Match(expression))
@@ -252,7 +252,7 @@ namespace Refal.Runtime
 		}
 
 		// find the first numeric symbol in an expression and convert to BigInteger
-		BigInteger ToBigInteger(object value)
+	    static BigInteger ToBigInteger(object value)
 		{
 			// try convert expression
 			var expr = value as PassiveExpression;
@@ -302,7 +302,7 @@ namespace Refal.Runtime
 		}
 
 		// extract arguments and convert to BigIntegers
-		void GetBigIntegerArguments(PassiveExpression expr, out BigInteger arg1, out BigInteger arg2)
+	    static void GetBigIntegerArguments(PassiveExpression expr, out BigInteger arg1, out BigInteger arg2)
 		{
 			object op1, op2;
 			GetArguments(expr, out op1, out op2);
@@ -316,7 +316,7 @@ namespace Refal.Runtime
 		/// Negative numbers get converted to positive numbers prefixed with '-'
 		/// For example, -520582(BigInteger) -> '-'(char) 52082(int)
 		/// </summary>
-		object[] ConvertBigIntegerToRefalNumber(BigInteger bigIntValue)
+		static object[] ConvertBigIntegerToRefalNumber(BigInteger bigIntValue)
 		{
 			var negative = bigIntValue < 0;
 			var result = new object[negative ? 2 : 1];

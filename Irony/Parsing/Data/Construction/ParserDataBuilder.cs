@@ -135,7 +135,7 @@ namespace Irony.Parsing.Construction {
       }
     }
 
-    private LRItemSet SelectNewItemsThatNeedLookback(TransitionList transitions) {
+    private static LRItemSet SelectNewItemsThatNeedLookback(TransitionList transitions) {
       //Select items with nullable tails that don't have lookbacks yet
       var items = new LRItemSet();
       foreach(var trans in transitions)
@@ -328,7 +328,7 @@ namespace Irony.Parsing.Construction {
       }//foreach state
     }
 
-    private void RemoveTerminals(TerminalSet terms, params Terminal[] termsToRemove) {
+    private static void RemoveTerminals(TerminalSet terms, params Terminal[] termsToRemove) {
       foreach(var termToRemove in termsToRemove)
         if (terms.Contains(termToRemove)) terms.Remove(termToRemove); 
     }

@@ -35,7 +35,7 @@ namespace Irony.GrammarExplorer {
       return (Program)domain.CreateInstanceAndUnwrap(typeof(Program).Assembly.FullName, typeof(Program).FullName);
     }
 
-    void RunApplication() {
+    static void RunApplication() {
       Application.EnableVisualStyles();
       Application.SetCompatibleTextRenderingDefault(false);
       Application.ThreadException += new System.Threading.ThreadExceptionEventHandler(Application_ThreadException);

@@ -464,7 +464,7 @@ namespace Irony.GrammarExplorer {
       }
     }//method
 
-    private bool DoSearch(TextBoxBase textBox, string fragment, int start) {
+    private static bool DoSearch(TextBoxBase textBox, string fragment, int start) {
       textBox.SelectionLength = 0;
       // Compile the regular expression.
       Regex r = new Regex(fragment, RegexOptions.IgnoreCase);
@@ -670,7 +670,7 @@ namespace Irony.GrammarExplorer {
       txtSource.Focus(); //set focus back to source
     }
 
-    private TreeNode LocateTreeNode(TreeNodeCollection nodes, int position, Func<TreeNode, int> positionFunction) {
+    private static TreeNode LocateTreeNode(TreeNodeCollection nodes, int position, Func<TreeNode, int> positionFunction) {
       TreeNode current = null;
       //Find the last node in the list that is "before or at" the position
       foreach (TreeNode node in nodes) {

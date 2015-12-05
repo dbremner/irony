@@ -224,7 +224,7 @@ namespace Irony.Parsing {
         return true; //if we come here it means we're done - we found string end.
       }  //end of loop to find string end; 
     }
-    private void ProcessPartialBody(ISourceStream source, CompoundTokenDetails details) {
+    private static void ProcessPartialBody(ISourceStream source, CompoundTokenDetails details) {
       int from = source.PreviewPosition;
       source.PreviewPosition = source.Text.Length;
       details.Body = source.Text.Substring(from, source.PreviewPosition - from);

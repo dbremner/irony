@@ -110,7 +110,7 @@ namespace Irony.Interpreter {
 
 
     //TODO: finish this
-    private void CheckUnassigned(object value) {
+    private static void CheckUnassigned(object value) {
       if (value == null)
         throw new Exception("Variable unassigned.");
     }

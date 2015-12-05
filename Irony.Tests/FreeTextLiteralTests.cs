@@ -33,11 +33,11 @@ namespace Irony.Tests {
       }
     }//class
 
-    private Parser CreateParser(Terminal terminal) {
+    private static Parser CreateParser(Terminal terminal) {
       var grammar = new FreeTextLiteralTestGrammar(terminal);
       return new Parser(grammar);
     }
-    private Token GetFirst(ParseTree tree) {
+    private static Token GetFirst(ParseTree tree) {
       return tree.Tokens[0];
     }
 

@@ -31,7 +31,7 @@ namespace Irony.Samples.Java
       base.OnScannerSelectTerminal(context);
     }
 
-    private void ResolveConflicts(ParsingContext context, CustomParserAction action) { 
+    private static void ResolveConflicts(ParsingContext context, CustomParserAction action) { 
     }
     /* BROKEN
     public override void OnResolvingConflict(ConflictResolutionArgs args)

@@ -53,7 +53,7 @@ namespace Irony.Parsing {
       return body; 
     }
 
-    private string ReadQuotedBody(ParsingContext context, ISourceStream source) {
+    private static string ReadQuotedBody(ParsingContext context, ISourceStream source) {
       const char dQuoute = '"'; 
       StringBuilder sb = null;
       var from = source.Location.Position + 1; //skip initial double quote

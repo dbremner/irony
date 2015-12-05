@@ -19,7 +19,7 @@ namespace Irony.Interpreter.Evaluator {
     }
 
     //Built-in methods
-    private object BuiltInPrintMethod(ScriptThread thread, object[] args) {
+    private static object BuiltInPrintMethod(ScriptThread thread, object[] args) {
       string text = string.Empty;
       switch(args.Length) {
         case 1:

@@ -127,7 +127,7 @@ namespace Irony.Interpreter.Ast {
       }//while
     }
 
-    private void CopyMessages(LogMessageList fromList, LogMessageList toList, SourceLocation baseLocation, string messagePrefix) {
+    private static void CopyMessages(LogMessageList fromList, LogMessageList toList, SourceLocation baseLocation, string messagePrefix) {
       foreach (var other in fromList)
         toList.Add(new LogMessage(other.Level, baseLocation + other.Location, messagePrefix + other.Message, other.ParserState));
     }//

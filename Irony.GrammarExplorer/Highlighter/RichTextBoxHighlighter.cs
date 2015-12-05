@@ -96,11 +96,11 @@ namespace Irony.GrammarExplorer {
 
     #region TextBox event handlers
 
-    void TextBox_MouseMove(object sender, MouseEventArgs e) {
+    static void TextBox_MouseMove(object sender, MouseEventArgs e) {
       //TODO: implement showing tip
     }
 
-    void TextBox_KeyDown(object sender, KeyEventArgs e) {
+    static void TextBox_KeyDown(object sender, KeyEventArgs e) {
       //TODO: implement showing intellisense hints or drop-downs
     }
 

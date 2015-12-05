@@ -45,7 +45,7 @@ namespace Irony.Interpreter.Ast {
     }//method
 
     // TODO: implement handling list/dict parameter tails (Scheme, Python, etc)
-    private object EvaluateAfter(ScriptThread thread) {
+    private static object EvaluateAfter(ScriptThread thread) {
       return null; 
     }
   }//class

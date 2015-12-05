@@ -105,7 +105,7 @@ namespace Irony.Ast {
     }//method
 
     //Contributed by William Horner (wmh)
-    private DefaultAstNodeCreator CompileDefaultNodeCreator(Type nodeType) {
+    private static DefaultAstNodeCreator CompileDefaultNodeCreator(Type nodeType) {
       ConstructorInfo constr = nodeType.GetConstructor(Type.EmptyTypes);
       DynamicMethod method = new DynamicMethod("CreateAstNode", nodeType, Type.EmptyTypes);
       ILGenerator il = method.GetILGenerator();

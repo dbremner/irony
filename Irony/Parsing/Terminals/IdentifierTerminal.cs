@@ -230,7 +230,7 @@ namespace Irony.Parsing {
     }//method
     
 
-    private char ReadUnicodeEscape(ISourceStream source, CompoundTokenDetails details) {
+    private static char ReadUnicodeEscape(ISourceStream source, CompoundTokenDetails details) {
       //Position is currently at "\" symbol
       source.PreviewPosition++; //move to U/u char
       int len;

@@ -92,7 +92,7 @@ namespace Irony.Parsing {
     // where BinOp is an OR-combination of operators. 
     // During parsing, when 'expr, BinOp, expr' is on the top of the stack, 
     // and incoming symbol is operator, we need to use precedence rule for deciding on the action. 
-    private void InheritPrecedence(ParseTreeNode node) {
+    private static void InheritPrecedence(ParseTreeNode node) {
       for (int i = 0; i < node.ChildNodes.Count; i++) {
         var child = node.ChildNodes[i];
         if (child.Precedence == Terminal.NoPrecedence) continue;

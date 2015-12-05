@@ -176,7 +176,7 @@ namespace Irony.Parsing.Construction {
       return prod;
     }
 
-    private void ComputeProductionFlags(Production production) {
+    private static void ComputeProductionFlags(Production production) {
       production.Flags = ProductionFlags.None;
       foreach (var rv in production.RValues) {
         //Check if it is a Terminal or Error element
@@ -264,7 +264,7 @@ namespace Irony.Parsing.Construction {
         _language.Errors.Add(GrammarErrorLevel.Error, null, Resources.ErrTransientNtMustHaveOneTerm,invalidTransSet.ToString());
     }//method
 
-    private int CountNonPunctuationTerms(Production production) {
+    private static int CountNonPunctuationTerms(Production production) {
       int count = 0;
       foreach(var rvalue in production.RValues)
         if (!rvalue.Flags.IsSet(TermFlags.IsPunctuation)) count++;
