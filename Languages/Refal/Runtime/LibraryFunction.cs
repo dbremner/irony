@@ -19,9 +19,9 @@ namespace Refal.Runtime
 	/// </summary>
 	public class LibraryFunction : ICallTarget
 	{
-		public string Name { get; private set; }
+		public string Name { get; }
 
-		private LibraryDelegate Function { get; set; }
+		private LibraryDelegate Function { get; }
 
 		delegate PassiveExpression LibraryDelegate(PassiveExpression value);
 

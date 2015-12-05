@@ -15,7 +15,7 @@ namespace Refal
 	/// </summary>
 	public class Pattern : AstNode
 	{
-		public IList<AstNode> Terms { get; private set; }
+		public IList<AstNode> Terms { get; }
 
 		public bool IsEmpty
 		{

@@ -67,7 +67,7 @@ namespace Irony.GrammarExplorer {
   public class EditorViewAdapterList : List<EditorViewAdapter> { }
 
   public class EditorViewAdapter {
-    public EditorAdapter Adapter { get; private set; }
+    public EditorAdapter Adapter { get; }
     private readonly IUIThreadInvoker _invoker;
     //public readonly Control Control;
     ViewData _data;

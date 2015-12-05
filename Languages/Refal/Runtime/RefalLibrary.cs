@@ -21,19 +21,19 @@ namespace Refal.Runtime
 		/// <summary>
 		/// Script execution thread.
 		/// </summary>
-		public ScriptThread ScriptThread { get; private set; }
+		public ScriptThread ScriptThread { get; }
 
 		/// <summary>
 		/// File I/O support: handle (expression) -> StreamReader/StreamWriter.
 		/// </summary>
-		IDictionary<string, object> OpenFiles { get; set; }
+		IDictionary<string, object> OpenFiles { get; }
 
 		/// <summary>
 		/// Bury/Dig functions expression storage.
 		/// </summary>
-		IDictionary<string, PassiveExpression> BuriedKeys { get; set; }
+		IDictionary<string, PassiveExpression> BuriedKeys { get; }
 
-		IDictionary<string, PassiveExpression> BuriedValues { get; set; }
+		IDictionary<string, PassiveExpression> BuriedValues { get; }
 
 		/// <summary>
 		/// Command line arguments.

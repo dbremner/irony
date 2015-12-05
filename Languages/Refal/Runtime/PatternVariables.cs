@@ -12,7 +12,7 @@ namespace Refal.Runtime
 	/// </summary>
 	public abstract class Variable : PatternItem
 	{
-		public string Name { get; private set; }
+		public string Name { get; }
 
 		public int FirstOccurance { get; set; }
 

@@ -17,9 +17,9 @@ namespace Refal
 	/// </summary>
 	public class Program : AstNode
 	{
-		public IDictionary<string, Function> Functions { get; private set; }
+		public IDictionary<string, Function> Functions { get; }
 
-		public IList<Function> FunctionList { get; private set; }
+		public IList<Function> FunctionList { get; }
 
 		public Function EntryPoint { get; private set; }
 

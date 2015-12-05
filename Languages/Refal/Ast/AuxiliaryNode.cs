@@ -16,7 +16,7 @@ namespace Refal
 	/// </summary>
 	public class AuxiliaryNode : AstNode
 	{
-		public IList<ParseTreeNode> ChildParseNodes { get; private set; }
+		public IList<ParseTreeNode> ChildParseNodes { get; }
 
 		public AuxiliaryNode()
 		{

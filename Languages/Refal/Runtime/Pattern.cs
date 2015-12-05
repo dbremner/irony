@@ -12,7 +12,7 @@ namespace Refal.Runtime
 	/// </summary>
 	public class Pattern : PassiveExpression
 	{
-		public IDictionary<string, Variable> Variables { get; private set; }
+		public IDictionary<string, Variable> Variables { get; }
 
 		public Pattern(params object[] terms)
 		{

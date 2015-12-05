@@ -20,11 +20,11 @@ using Irony.Interpreter.Ast;
 
 namespace Irony.Interpreter.Evaluator {
   public class ExpressionEvaluator {
-    public ExpressionEvaluatorGrammar Grammar {get; private set;}
+    public ExpressionEvaluatorGrammar Grammar {get; }
     public Parser Parser {get; private set;} 
-    public LanguageData Language {get; private set;}
-    public LanguageRuntime Runtime {get; private set;} 
-    public ScriptApp App {get; private set;}
+    public LanguageData Language {get; }
+    public LanguageRuntime Runtime {get; } 
+    public ScriptApp App {get; }
 
     public IDictionary<string, object> Globals {
       get { return App.Globals; }

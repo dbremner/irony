@@ -16,7 +16,7 @@ namespace Refal
 	/// </summary>
 	public class Block : AstNode
 	{
-		public IList<Sentence> Sentences { get; private set; }
+		public IList<Sentence> Sentences { get; }
 
 		public Runtime.Pattern BlockPattern { get; set; }
 

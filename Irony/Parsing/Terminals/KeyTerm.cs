@@ -30,7 +30,7 @@ namespace Irony.Parsing {
       this.Flags |= TermFlags.NoAstNode;
     }
 
-    public string Text {get; private set;}
+    public string Text {get; }
 
     //Normally false, meaning keywords (symbols in grammar consisting of letters) cannot be followed by a letter or digit
     public bool AllowAlphaAfterKeyword = false; 

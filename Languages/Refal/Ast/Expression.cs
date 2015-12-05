@@ -16,7 +16,7 @@ namespace Refal
 	/// </summary>
 	public class Expression : AstNode
 	{
-		public IList<AstNode> Terms { get; private set; }
+		public IList<AstNode> Terms { get; }
 
 		public Expression()
 		{

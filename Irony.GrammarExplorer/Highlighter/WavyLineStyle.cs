@@ -17,7 +17,7 @@ namespace Irony.GrammarExplorer.Highlighter {
       Pen = new Pen(Color.FromArgb(alpha, color));
     }
 
-    private Pen Pen { get; set; }
+    private Pen Pen { get; }
 
     public override void Draw(Graphics gr, Point pos, Range range) {
       var size = GetSizeOfRange(range);

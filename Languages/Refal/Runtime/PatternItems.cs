@@ -43,7 +43,7 @@ namespace Refal.Runtime
 
 	public class Symbol : PatternItem
 	{
-		object Value { get; set; }
+		object Value { get; }
 
 		public Symbol(object value)
 		{
