@@ -95,7 +95,7 @@ namespace Refal.Runtime
 
 			string mode = expression[0].ToString().ToUpper();
 			string handle = expression[1].ToString();
-			string fileName = string.Format("refal{0}.dat", handle);
+			string fileName = $"refal{handle}.dat";
 
 			// fileName can be omitted
 			if (expression.Count > 2)

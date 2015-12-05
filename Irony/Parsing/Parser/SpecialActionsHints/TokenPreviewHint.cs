@@ -52,7 +52,7 @@ namespace Irony.Parsing {
       }
       //Build description
       var beforeTerms = string.Join(" ", _beforeTerminals.Select(t => t.Name));
-      _description = string.Format("{0} if {1} comes before {2}.", _actionType, _firstTerminal.Name, beforeTerms); 
+      _description = $"{_actionType} if {_firstTerminal.Name} comes before {beforeTerms}."; 
     }
 
     public override string ToString() {

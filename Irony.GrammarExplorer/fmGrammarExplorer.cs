@@ -560,7 +560,7 @@ namespace Irony.GrammarExplorer {
       }
       if (chkAutoRefresh.Checked) {
         LoadSelectedGrammar();
-        txtGrammarComments.Text += String.Format("{0}Grammar assembly reloaded: {1:HH:mm:ss}", Environment.NewLine, DateTime.Now);
+        txtGrammarComments.Text += $"{Environment.NewLine}Grammar assembly reloaded: {DateTime.Now:HH:mm:ss}";
       }
     }
 

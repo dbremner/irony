@@ -116,7 +116,7 @@ z -= y             # = 3
       //Using methods imported from System.Environment
       script = @"report = '#{MachineName}-#{OSVersion}-#{UserName}'";
       result = eval.Evaluate(script);
-      var expected = string.Format("{0}-{1}-{2}", Environment.MachineName, Environment.OSVersion, Environment.UserName); 
+      var expected = $"{Environment.MachineName}-{Environment.OSVersion}-{Environment.UserName}"; 
       Assert.AreEqual(expected, result, "Unexpected computation result");
 
       //Using special built-in methods print and format

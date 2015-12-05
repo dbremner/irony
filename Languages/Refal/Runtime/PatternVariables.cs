@@ -41,7 +41,7 @@ namespace Refal.Runtime
 
 		public override string ToString()
 		{
-			return Value == null ? Name : string.Format("{0}={1}", Name, Value);
+			return Value == null ? Name : $"{Name}={Value}";
 		}
 	}
 
