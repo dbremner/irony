@@ -12,7 +12,7 @@ namespace Refal.Runtime
 	/// </summary>
 	public abstract class PatternItem
 	{
-		public PatternItem()
+		protected PatternItem()
 		{
 		}
 
@@ -82,7 +82,7 @@ namespace Refal.Runtime
 
 	public abstract class StructureBrace : PatternItem
 	{
-		public StructureBrace()
+		protected StructureBrace()
 		{
 		}
 

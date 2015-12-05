@@ -64,14 +64,14 @@ namespace Irony.Parsing {
   //Basic Backus-Naur Form element. Base class for Terminal, NonTerminal, BnfExpression, GrammarHint
   public abstract class BnfTerm {
     #region consructors
-    public BnfTerm(string name) : this(name, name) { }
-    public BnfTerm(string name, string errorAlias, Type nodeType) : this(name, errorAlias) {
+    protected BnfTerm(string name) : this(name, name) { }
+    protected BnfTerm(string name, string errorAlias, Type nodeType) : this(name, errorAlias) {
       AstConfig.NodeType = nodeType;
     }
-    public BnfTerm(string name, string errorAlias, AstNodeCreator nodeCreator) : this(name, errorAlias) {
+    protected BnfTerm(string name, string errorAlias, AstNodeCreator nodeCreator) : this(name, errorAlias) {
       AstConfig.NodeCreator = nodeCreator;  
     }
-    public BnfTerm(string name, string errorAlias) {
+    protected BnfTerm(string name, string errorAlias) {
       Name = name;
       ErrorAlias = errorAlias;
       _hashCode = (_hashCounter++).GetHashCode(); 

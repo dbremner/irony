@@ -23,7 +23,7 @@ namespace Irony.Interpreter {
   /// <summary> Base class for languages that use Irony Interpreter to execute scripts. </summary>
   public abstract class InterpretedLanguageGrammar : Grammar, ICanRunSample {
        // making the class abstract so it won't load into Grammar Explorer
-    public InterpretedLanguageGrammar(bool caseSensitive)
+    protected InterpretedLanguageGrammar(bool caseSensitive)
       : base(caseSensitive) {
       this.LanguageFlags = LanguageFlags.CreateAst;
     }

@@ -7,7 +7,7 @@ namespace Irony.Parsing {
 
   public abstract partial class ParserAction {
 
-    public ParserAction() { }
+    protected ParserAction() { }
 
     public virtual void Execute(ParsingContext context) {
     

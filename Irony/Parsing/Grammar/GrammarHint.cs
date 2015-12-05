@@ -27,7 +27,7 @@ namespace Irony.Parsing {
   // shift in case of a shift/reduce conflict. It is in fact the default action of LALR parser, so the hint simply suppresses the error 
   // message about the shift/reduce conflict in the grammar.
   public abstract class GrammarHint : BnfTerm {
-    public GrammarHint() : base("hint") { }
+    protected GrammarHint() : base("hint") { }
 
     /// <summary> Gives a chance to a custom code in hint to interfere in parser automaton construction.</summary>
     /// <param name="language">The LanguageData instance.</param>

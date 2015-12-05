@@ -18,7 +18,7 @@ namespace Refal.Runtime
 
 		public object Value { get; set; }
 
-		public Variable(string name)
+		protected Variable(string name)
 		{
 			Name = name;
 			FirstOccurance = -1;

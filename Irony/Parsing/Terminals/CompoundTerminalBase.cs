@@ -73,8 +73,8 @@ namespace Irony.Parsing {
     #endregion 
 
     #region constructors and initialization
-    public CompoundTerminalBase(string name) : this(name, TermFlags.None) { }
-    public CompoundTerminalBase(string name, TermFlags flags) : base(name) {
+    protected CompoundTerminalBase(string name) : this(name, TermFlags.None) { }
+    protected CompoundTerminalBase(string name, TermFlags flags) : base(name) {
       SetFlag(flags);
       Escapes = GetDefaultEscapes();
     }
