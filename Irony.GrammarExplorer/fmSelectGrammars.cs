@@ -77,11 +77,9 @@ namespace Irony.GrammarExplorer {
       return grammars;
     }
 
-    private static bool ContainsGrammar(GrammarItemList items, GrammarItem item) {
-      foreach (var listItem in items)
-        if (listItem.TypeName == item.TypeName && listItem.Location == item.Location)
-          return true;
-      return false;
+    private static bool ContainsGrammar(GrammarItemList items, GrammarItem item)
+    {
+      return items.Any(listItem => listItem.TypeName == item.TypeName && listItem.Location == item.Location);
     }
 
     private void btnCheckUncheck_Click(object sender, EventArgs e) {

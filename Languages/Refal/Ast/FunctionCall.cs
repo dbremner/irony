@@ -42,7 +42,7 @@ namespace Refal
 					}
 
 					// or symbol of arithmetic operation: <- s.1 1>
-					var pnode = auxNode.ChildParseNodes.Where(n => n.Term != null).FirstOrDefault();
+					var pnode = auxNode.ChildParseNodes.FirstOrDefault(n => n.Term != null);
 					if (pnode != null)
 					{
 						FunctionName = pnode.Term.Name;

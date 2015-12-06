@@ -12,6 +12,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading;
 using Irony.Parsing;
@@ -37,14 +38,10 @@ namespace Irony.Interpreter {
       Modules.Add(MainModule);
     }
 
-    public ModuleInfo GetModule(AstNode moduleNode) {
-      foreach (var m in Modules)
-        if (m.ScopeInfo == moduleNode.DependentScopeInfo)
-          return m;
-      return null;
+    public ModuleInfo GetModule(AstNode moduleNode)
+    {
+      return Modules.FirstOrDefault(m => m.ScopeInfo == moduleNode.DependentScopeInfo);
     }
-
-
   }//class
 
 }

@@ -131,9 +131,7 @@ namespace Irony.Parsing {
 
     public bool HasErrors() {
       if (ParserMessages.Count == 0) return false;
-      foreach (var err in ParserMessages)
-        if (err.Level == ErrorLevel.Error) return true;
-      return false; 
+      return ParserMessages.Any(err => err.Level == ErrorLevel.Error);
     }//method
 
   }//class

@@ -204,11 +204,11 @@ namespace Irony.Parsing.Construction {
 
   public class LRItemSet : HashSet<LRItem> {
 
-    public LRItem FindByCore(LR0Item core) {
-      foreach (LRItem item in this)
-        if (item.Core == core) return item;
-      return null;
+    public LRItem FindByCore(LR0Item core)
+    {
+      return this.FirstOrDefault(item => item.Core == core);
     }
+
     public LRItemSet SelectByCurrent(BnfTerm current) {
       var result = new LRItemSet();
       foreach (var item in this)

@@ -352,8 +352,7 @@ namespace Irony.Parsing.Construction {
       if (items.Count == 0) return string.Empty;
       //Copy non-initial items to separate list, and then sort it
       LR0ItemList itemList = new LR0ItemList();
-      foreach (var item in items)
-        itemList.Add(item);
+      itemList.AddRange(items);
       //quick shortcut
       if (itemList.Count == 1)
         return itemList[0].ID.ToString();
