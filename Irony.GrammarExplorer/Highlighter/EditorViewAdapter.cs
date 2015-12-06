@@ -72,7 +72,6 @@ namespace Irony.GrammarExplorer {
     //public readonly Control Control;
     ViewData _data;
     ViewRange _range;
-    bool _wantsColorize;
     int _colorizing;
     public event EventHandler<ColorizeEventArgs> ColorizeTokens;
 
@@ -86,7 +85,7 @@ namespace Irony.GrammarExplorer {
     //SetViewRange and SetNewText are called by text box's event handlers to notify adapter that user did something edit box
     public void SetViewRange(int min, int max) {
       _range = new ViewRange(min, max);
-      _wantsColorize = true;
+      WantsColorize = true;
     }
     //The new text is passed directly to EditorAdapter instance (possibly shared by several view adapters).
     // EditorAdapter parses the text on a separate background thread, and notifies back this and other
@@ -109,18 +108,16 @@ namespace Irony.GrammarExplorer {
         if (oldData != null && oldData.Tree != null) {
           DetectAlreadyColoredTokens(oldData.ColoredTokens, _data.Tree.SourceText.Length - oldData.Tree.SourceText.Length);
         }
-        _wantsColorize = true;
+        WantsColorize = true;
       }//lock
     }
 
 
     #region Colorizing
-    public bool WantsColorize {
-      get { return _wantsColorize; }
-    }
+    public bool WantsColorize { get; private set; }
 
     public void TryInvokeColorize() {
-      if (!_wantsColorize) return;
+      if (!WantsColorize) return;
       int colorizing = Interlocked.Exchange(ref _colorizing, 1);
       if (colorizing != 0) return;
       _invoker.InvokeOnUIThread(Colorize);
@@ -139,7 +136,7 @@ namespace Irony.GrammarExplorer {
           ColorizeTokens(this, args);
         }
       }//if data != null ...
-      _wantsColorize = false;
+      WantsColorize = false;
       _colorizing = 0;
     }
 

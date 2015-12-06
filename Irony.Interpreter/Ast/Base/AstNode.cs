@@ -122,10 +122,7 @@ namespace Irony.Interpreter.Ast {
     /// <summary>
     /// Dependent scope is a scope produced by the node. For ex, FunctionDefNode defines a scope
     /// </summary>
-    public virtual ScopeInfo DependentScopeInfo {
-      get {return _dependentScope; }
-      set { _dependentScope = value; }
-    } ScopeInfo _dependentScope;
+    public virtual ScopeInfo DependentScopeInfo { get; set; }
 
     #endregion
 

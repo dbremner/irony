@@ -24,7 +24,6 @@ namespace Irony.GrammarExplorer {
   public class EditorAdapter {
     readonly Parser _parser;
     Scanner _scanner;
-    ParseTree _parseTree;
     string _newText;
     readonly EditorViewAdapterList _views = new EditorViewAdapterList();
     EditorViewAdapterList _viewsCopy; //copy used in refresh loop; set to null when views are added/removed
@@ -66,21 +65,19 @@ namespace Irony.GrammarExplorer {
       _newText = text;
     }
 
-    public ParseTree ParseTree {
-      get { return _parseTree; }
-    }
+    public ParseTree ParseTree { get; private set; }
 
     //Note: we don't actually parse in current version, only scan. Will implement full parsing in the future,
     // to support all intellisense operations
     private  void ParseSource(string newText) {
       //Explicitly catch the case when new text is empty
       if (newText != string.Empty) {
-        _parseTree = _parser.Parse(newText);// .ScanOnly(newText, "Source");
+        ParseTree = _parser.Parse(newText);// .ScanOnly(newText, "Source");
       }
       //notify views
       var views = GetViews();
       foreach (var view in views)
-        view.UpdateParsedSource(_parseTree);
+        view.UpdateParsedSource(ParseTree);
     }
 
 

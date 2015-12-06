@@ -38,16 +38,15 @@ namespace Irony.Parsing {
     public readonly string Pattern;
     public readonly StringList Prefixes = new StringList();
 
-    public Regex Expression {
-      get { return _expression; }
-    } Regex  _expression;
+    public Regex Expression { get; private set; }
+
     #endregion
 
     public override void Init(GrammarData grammarData) {
       base.Init(grammarData);
       string workPattern = @"\G(" + Pattern + ")";
       RegexOptions options = (Grammar.CaseSensitive ? RegexOptions.None : RegexOptions.IgnoreCase);
-      _expression = new Regex(workPattern, options);
+      Expression = new Regex(workPattern, options);
       if (this.EditorInfo == null) 
         this.EditorInfo = new TokenEditorInfo(TokenType.Unknown, TokenColor.Text, TokenTriggers.None);
     }
@@ -57,7 +56,7 @@ namespace Irony.Parsing {
     }
 
     public override Token TryMatch(ParsingContext context, ISourceStream source) {
-      Match m = _expression.Match(source.Text, source.PreviewPosition);
+      Match m = Expression.Match(source.Text, source.PreviewPosition);
       if (!m.Success || m.Index != source.PreviewPosition) 
         return null;
       source.PreviewPosition += m.Length;

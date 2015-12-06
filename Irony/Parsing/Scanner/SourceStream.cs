@@ -32,7 +32,7 @@ namespace Irony.Parsing {
       _stringComparison = caseSensitive ? StringComparison.InvariantCulture : StringComparison.InvariantCultureIgnoreCase;
       _tabWidth = tabWidth; 
       _location = initialLocation;
-      _previewPosition = _location.Position;
+      PreviewPosition = _location.Position;
       if (_tabWidth <= 1) 
         _tabWidth = 8;
     }
@@ -56,25 +56,22 @@ namespace Irony.Parsing {
       set { _location = value; }
     } SourceLocation _location;
 
-    public int PreviewPosition {
-      get { return _previewPosition; }
-      set { _previewPosition = value; } 
-    } int _previewPosition;
+    public int PreviewPosition { get; set; }
 
     public char PreviewChar {
       [System.Diagnostics.DebuggerStepThrough]
       get {
-        if (_previewPosition >= _textLength) 
+        if (PreviewPosition >= _textLength) 
           return '\0';
-        return _chars[_previewPosition];
+        return _chars[PreviewPosition];
       }
     }
 
     public char NextPreviewChar {
       [System.Diagnostics.DebuggerStepThrough]
       get {
-        if (_previewPosition + 1 >= _textLength) return '\0';
-        return _chars[_previewPosition + 1];
+        if (PreviewPosition + 1 >= _textLength) return '\0';
+        return _chars[PreviewPosition + 1];
       }
     }
 
@@ -102,13 +99,13 @@ namespace Irony.Parsing {
 
     [System.Diagnostics.DebuggerStepThrough]
     public bool EOF() {
-      return _previewPosition >= _textLength;
+      return PreviewPosition >= _textLength;
     }
     #endregion
 
     //returns substring from Location.Position till (PreviewPosition - 1)
     private string GetPreviewText() {
-      var until = _previewPosition;
+      var until = PreviewPosition;
       if (until > _textLength) until = _textLength;
       var p = _location.Position;
       string text = Text.Substring(p, until - p);
