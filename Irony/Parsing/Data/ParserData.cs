@@ -101,7 +101,7 @@ namespace Irony.Parsing {
       return ProductionToString(this, -1); //no dot
     }
     public static string ProductionToString(Production production, int dotPosition) {
-      char dotChar = '\u00B7'; //dot in the middle of the line
+      const char dotChar = '\u00B7'; //dot in the middle of the line
       StringBuilder bld = new StringBuilder();
       bld.Append(production.LValue.Name);
       bld.Append(" -> ");
