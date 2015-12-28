@@ -374,9 +374,9 @@ namespace Irony.Parsing {
       TermReportGroups.Add(new TermReportGroup(string.Empty, TermReportGroupType.DoNotReport, SymbolsToTerms(symbols)));
     }
     /// <summary>
-    /// Adds symbols to a group with no-report type, so symbols will not be shown in expected lists in syntax error messages. 
+    /// Adds terminals to a group with no-report type, so symbols will not be shown in expected lists in syntax error messages. 
     /// </summary>
-    /// <param name="symbols">Symbols to exclude.</param>
+    /// <param name="terminals">Terminals to exclude.</param>
     protected void AddToNoReportGroup(params Terminal[] terminals) {
       TermReportGroups.Add(new TermReportGroup(string.Empty, TermReportGroupType.DoNotReport, terminals));
     }
