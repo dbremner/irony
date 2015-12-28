@@ -53,14 +53,14 @@ namespace Irony.Tests {
       term.Escapes.Add(@"\,", @",");
       term.Escapes.Add(@"\)", @")"); 
 
-      parser = this.CreateParser(term);
+      parser = CreateParser(term);
       token = GetFirst(parser.Parse(@"abc\\de\,\)fg,"));
       Assert.IsNotNull(token, "Failed to produce a token on valid string.");
       Assert.AreEqual(term, token.Terminal, "Failed to scan a string - invalid Terminal in the returned token.");
       Assert.AreEqual(token.Value.ToString(), @"abc\de,)fg", "Failed to scan a string");
 
       term = new FreeTextLiteral("FreeText", FreeTextOptions.AllowEof, ";");
-      parser = this.CreateParser(term);
+      parser = CreateParser(term);
       token = GetFirst(parser.Parse(@"abcdefg"));
       Assert.IsNotNull(token, "Failed to produce a token for free text ending at EOF.");
       Assert.AreEqual(term, token.Terminal, "Failed to scan a free text ending at EOF - invalid Terminal in the returned token.");
@@ -73,14 +73,14 @@ namespace Irony.Tests {
       //END_VAR
       term = new FreeTextLiteral("varContent", "END_VAR");
       term.Firsts.Add("VAR");
-      parser = this.CreateParser(term);
+      parser = CreateParser(term);
       token = GetFirst(parser.Parse("VAR\r\nMESSAGE:STRING80;\r\n(*_ORError Message*)\r\nEND_VAR"));
       Assert.IsNotNull(token, "Failed to produce a token on valid string.");
       Assert.AreEqual(term, token.Terminal, "Failed to scan a string - invalid Terminal in the returned token.");
       Assert.AreEqual(token.ValueString, "\r\nMESSAGE:STRING80;\r\n(*_ORError Message*)\r\n", "Failed to scan a string");
 
       term = new FreeTextLiteral("freeText", FreeTextOptions.AllowEof);
-      parser = this.CreateParser(term);
+      parser = CreateParser(term);
       token = GetFirst(parser.Parse(" "));
       Assert.IsNotNull(token, "Failed to produce a token on valid string.");
       Assert.AreEqual(term, token.Terminal, "Failed to scan a string - invalid Terminal in the returned token.");

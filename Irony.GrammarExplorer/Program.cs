@@ -23,7 +23,7 @@ namespace Irony.GrammarExplorer {
     [STAThread]
     static void Main() {
       var program = CreateInstanceInSeparateDomain();
-      program.RunApplication();
+      RunApplication();
     }
 
     static Program CreateInstanceInSeparateDomain() {
