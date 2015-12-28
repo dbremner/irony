@@ -88,7 +88,7 @@ namespace Irony.Parsing {
       Context.Source.Position = Context.Source.PreviewPosition;
       //4. Check for EOF
       if (Context.Source.EOF()) {
-        Context.CurrentToken = new Token(_grammar.Eof, Context.Source.Location, string.Empty, _grammar.Eof.Name);;
+        Context.CurrentToken = new Token(_grammar.Eof, Context.Source.Location, string.Empty, _grammar.Eof.Name);
         return; 
       }
       //5. Actually scan the source text and construct a new token

@@ -308,7 +308,7 @@ namespace Refal.Runtime
 			GetArguments(expr, out op1, out op2);
 
 			arg1 = ToBigInteger(op1);
-			arg2 = ToBigInteger(op2);;
+			arg2 = ToBigInteger(op2);
 		}
 
 		/// <summary>
